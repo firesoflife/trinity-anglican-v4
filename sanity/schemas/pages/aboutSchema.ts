@@ -9,6 +9,7 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
+      placeholder: 'About Us',
       validation: (Rule: Rule) => Rule.required(),
     },
     {

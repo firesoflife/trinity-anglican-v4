@@ -6,6 +6,7 @@ import { deskStructure } from './sanity/config/deskStructure';
 
 
 
+
 const sanityConfig = defineConfig({
 
   projectId: 'ismdiz3z',
@@ -19,6 +20,7 @@ const sanityConfig = defineConfig({
   }), visionTool()],
 
   schema: { types: schemas },
+
 })
 
 export default sanityConfig

@@ -1,8 +1,8 @@
-import { Rule } from '@sanity/types';
+import { Rule, ValidationContext, SanityDocument } from '@sanity/types';
+
 
 //  Sanity Types
-export type { Rule }
-
+export type { Rule, ValidationContext, SanityDocument }
 
 
 // Schema Types
@@ -12,3 +12,22 @@ export type home = {
   name: string;
 }
 
+
+export type Preview = {
+  select: {
+    title: string;
+    eventType: string;
+    date: string;
+    startTime: string;
+    endTime: string;
+    daysOfWeek: string[];
+  };
+  prepare: (args: {
+    title: string;
+    eventType: string;
+    date: string;
+    startTime: string;
+    endTime: string;
+    daysOfWeek: string[];
+  }) => any; // Replace 'any' with the expected return type of the prepare function
+};
