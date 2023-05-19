@@ -31,3 +31,9 @@ export type Preview = {
     daysOfWeek: string[];
   }) => any; // Replace 'any' with the expected return type of the prepare function
 };
+
+export type Sermon = {
+  title: string;
+  subtitle: string;
+  speaker: string;
+}

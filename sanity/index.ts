@@ -5,7 +5,12 @@ import home from './schemas/pages/homeSchema'
 import staffList from './schemas/components/about/staffList'
 import worship from './schemas/pages/worshipSchema'
 import worshipSchedule from './schemas/components/worship/worshipSchedule'
-
+import sermon from './schemas/components/worship/sermon'
+import speaker from './schemas/components/worship/speaker'
+import rental from './schemas/pages/facilityRentalSchema'
+import { socialMediaPlatform as social } from './schemas/components/contact/socialMedia'
+import { contactUs } from './schemas/pages/contactSchema'
+import { pastoralCare } from './schemas/components/contact/pastoralCare'
 
 
 const schemas = [
@@ -15,7 +20,13 @@ const schemas = [
   staff,
   staffList,
   worship,
-  worshipSchedule
+  worshipSchedule,
+  sermon,
+  speaker,
+  rental,
+  social,
+  contactUs,
+  pastoralCare
 ]
 
 export default schemas

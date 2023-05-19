@@ -48,7 +48,8 @@ export default {
           return 'A date is required for special services'
         }
         return true
-      })
+      }),
+      hidden: ({ document }: { document: any }) => document.eventType === 'regularService',
     },
     {
       name: 'startTime',
