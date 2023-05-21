@@ -1,42 +1,63 @@
+import { defineType, defineField } from '@sanity/types';
 
-
-export default {
+export const rental = defineType({
   name: 'rental',
   title: 'Facility Rental',
   type: 'document',
   fields: [
-    {
-      name: 'name',
-      title: 'Facility Name',
+    defineField({
+      name: 'title',
+      title: 'Title',
       type: 'string',
-    },
-    {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
-    },
-    {
-      name: 'location',
-      title: 'Location',
-      type: 'string',
-    },
-    {
-      name: 'capacity',
-      title: 'Capacity',
-      type: 'number',
-    },
-    {
-      name: 'price',
-      title: 'Price',
-      type: 'number',
-    },
-    {
-      name: 'image',
-      title: 'Image',
-      type: 'image',
+      placeholder: 'Contact Us',
+    }),
+    defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
       options: {
-        hotspot: true,
+        source: 'title',
+        maxLength: 96,
       },
-    },
+    }),
+    defineField(
+      {
+        name: 'name',
+        title: 'Facility Name',
+        type: 'string',
+      }),
+    defineField(
+      {
+        name: 'description',
+        title: 'Description',
+        type: 'text',
+      }),
+    defineField(
+      {
+        name: 'location',
+        title: 'Location',
+        type: 'string',
+      }),
+    defineField(
+      {
+        name: 'capacity',
+        title: 'Capacity',
+        type: 'number',
+      }),
+    defineField(
+      {
+        name: 'price',
+        title: 'Price',
+        type: 'number',
+      }),
+    defineField(
+      {
+        name: 'image',
+        title: 'Image',
+        type: 'image',
+        options: {
+          hotspot: true,
+        },
+      }),
   ],
-};
+});

@@ -1,4 +1,4 @@
-import { Rule, ValidationContext, SanityDocument } from '@sanity/types';
+import { Rule, ValidationContext, SanityDocument, ImageHotspot } from '@sanity/types';
 
 
 //  Sanity Types
@@ -36,4 +36,15 @@ export type Sermon = {
   title: string;
   subtitle: string;
   speaker: string;
+}
+
+export type Home = {
+  home: string;
+  pageTitle: string;
+  slug: string;
+  heroHeading: string;
+  heroSubheading: string;
+  welcome: string;
+  // NOTE & TODO  --> image types ? 
+  alt: string;
 }

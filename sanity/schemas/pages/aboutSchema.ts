@@ -1,45 +1,50 @@
-import { Rule } from '../../../types'
+import { defineType, defineField } from '@sanity/types'
 
-export default {
+export const about = defineType({
   name: 'about',
   title: 'About Page',
   type: 'document',
   fields: [
-    {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-      placeholder: 'About Us',
-      validation: (Rule: Rule) => Rule.required(),
-    },
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-    },
-    {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
-      validation: (Rule: Rule) => Rule.required(),
-    },
-    {
-      name: 'image',
-      title: 'Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    },
-    {
-      name: 'body',
-      title: 'Body',
-      type: 'array',
-      of: [{ type: 'block' }, { type: 'image' }],
-    },
+    defineField(
+      {
+        name: 'title',
+        title: 'Title',
+        type: 'string',
+        placeholder: 'About Us',
+        validation: (Rule) => Rule.required(),
+      }),
+    defineField(
+      {
+        name: 'slug',
+        title: 'Slug',
+        type: 'slug',
+        options: {
+          source: 'title',
+          maxLength: 96,
+        },
+      }),
+    defineField(
+      {
+        name: 'description',
+        title: 'Description',
+        type: 'text',
+        validation: (Rule) => Rule.required(),
+      }),
+    defineField(
+      {
+        name: 'image',
+        title: 'Image',
+        type: 'image',
+        options: {
+          hotspot: true,
+        },
+      }),
+    defineField(
+      {
+        name: 'body',
+        title: 'Body',
+        type: 'array',
+        of: [{ type: 'block' }, { type: 'image' }],
+      }),
   ],
-};
+})
