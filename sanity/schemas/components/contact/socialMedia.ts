@@ -31,14 +31,15 @@ export const socialMediaPlatform = defineType({
         },
 
         fields: [
-          {
-            name: 'alt',
-            type: 'string',
-            title: 'Alternative Text',
-            options: {
-              isHighlighted: true,
-            },
-          },
+          defineField(
+            {
+              name: 'alt',
+              type: 'string',
+              title: 'Alternative Text',
+              options: {
+                // isHighlighted: true, TODO: find type or non-deprecated way to do this
+              },
+            }),
         ],
         validation: (Rule) => Rule.required(),
       }),

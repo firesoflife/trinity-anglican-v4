@@ -1,9 +1,8 @@
 import { MdEvent } from 'react-icons/md';
-import { Rule } from '@sanity/types';
 import { ValidationContext, Preview } from '../../../../types';
+import { defineType, defineField } from 'sanity';
 
-
-export default {
+export const worshipSchedule = defineType({
   name: 'worshipSchedule',
   title: 'Worship Schedule',
   type: 'document',
@@ -14,7 +13,7 @@ export default {
       title: 'Title',
       type: 'string',
       description: 'The title of the event',
-      validation: (Rule: Rule) => Rule.required().min(10).max(80)
+      validation: (Rule) => Rule.required().min(10).max(80)
     },
     {
       name: 'eventType',
@@ -27,7 +26,7 @@ export default {
         ],
         layout: 'radio',
       },
-      validation: (Rule: Rule) => Rule.required()
+      validation: (Rule) => Rule.required()
     },
     {
       name: 'description',
@@ -43,7 +42,7 @@ export default {
         dateFormat: 'MMMM Do YYYY',
       },
       description: 'The date of the event (for unique events)',
-      validation: (Rule: Rule) => Rule.custom((field, context: ValidationContext) => {
+      validation: (Rule) => Rule.custom((field, context) => {
         if (context.document && (context.document).eventType === 'specialService' && !field) {
           return 'A date is required for special services'
         }
@@ -56,14 +55,14 @@ export default {
       title: 'Start Time',
       type: 'string',
       description: 'The start time of the event(e.g., 9:00 AM)',
-      validation: (Rule: Rule) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'endTime',
       title: 'End Time',
       type: 'string',
       description: 'The end time of the event or service(e.g., 10:00 AM)',
-      validation: (Rule: Rule) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'daysOfWeek',
@@ -83,7 +82,7 @@ export default {
           { title: 'Saturday', value: 'saturday' },
         ],
       },
-      validation: (Rule: Rule) => Rule.custom((field, context: ValidationContext) => {
+      validation: (Rule) => Rule.custom((field, context) => {
         if (context.document && (context.document).eventType === 'regularService' && !field) {
           return 'Days of the week are required for regular services'
 
@@ -140,6 +139,6 @@ export default {
         subtitle: subtitle,
       }
     }
-  } as unknown as Preview
+  }
 
-}
+})

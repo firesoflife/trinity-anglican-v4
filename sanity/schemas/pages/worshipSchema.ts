@@ -1,6 +1,6 @@
 import { defineField, defineType } from '@sanity/types'
 
-export default
+export const worship = defineType(
   {
     name: 'worship',
     title: 'Worship Page',
@@ -44,4 +44,4 @@ export default
         },
       )
     ]
-  }
+  })

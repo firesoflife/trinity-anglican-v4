@@ -2,65 +2,73 @@
 import { MdMusicNote } from "react-icons/md";
 import { Rule } from '@sanity/types';
 import { Sermon } from '@/types';
+import { defineType, defineField } from '@sanity/types';
 
 
-export default {
+export const sermon = defineType({
   name: "sermon",
   title: "Sermon",
   type: "document",
   icon: MdMusicNote,
   fields: [
-    {
-      name: "title",
-      title: "Title",
-      type: "string",
-      validation: (Rule: Rule) => Rule.required(),
-    },
-    {
-      name: "slug",
-      title: "Slug",
-      type: "slug",
-      options: {
-        source: "title",
-        maxLength: 96,
-      },
-    },
-    {
-      name: "audio",
-      title: "Audio",
-      type: "file",
-      options: {
-        accept: "audio/*",
-      },
-      validation: (Rule: Rule) => Rule.required(),
-    },
-    {
-      name: "description",
-      title: "Description",
-      type: "text",
-    },
-    {
-      name: "date",
-      title: "Date",
-      type: "datetime",
-      validation: (Rule: Rule) => Rule.required(),
-    },
-    {
-      name: "tags",
-      title: "Tags",
-      type: "array",
-      of: [{ type: "string" }],
-      options: {
-        layout: "tags",
-      },
-    },
-    {
-      name: "speaker",
-      title: "Speaker",
-      type: "reference",
-      to: [{ type: "speaker" }],
-      validation: (Rule: Rule) => Rule.required(),
-    },
+    defineField(
+      {
+        name: "title",
+        title: "Title",
+        type: "string",
+        validation: (Rule) => Rule.required(),
+      }),
+    defineField(
+      {
+        name: "slug",
+        title: "Slug",
+        type: "slug",
+        options: {
+          source: "title",
+          maxLength: 96,
+        },
+      }),
+    defineField(
+      {
+        name: "audio",
+        title: "Audio",
+        type: "file",
+        options: {
+          accept: "audio/*",
+        },
+        validation: (Rule) => Rule.required(),
+      }),
+    defineField(
+      {
+        name: "description",
+        title: "Description",
+        type: "text",
+      }),
+    defineField(
+      {
+        name: "date",
+        title: "Date",
+        type: "datetime",
+        validation: (Rule) => Rule.required(),
+      }),
+    defineField(
+      {
+        name: "tags",
+        title: "Tags",
+        type: "array",
+        of: [{ type: "string" }],
+        options: {
+          layout: "tags",
+        },
+      }),
+    defineField(
+      {
+        name: "speaker",
+        title: "Speaker",
+        type: "reference",
+        to: [{ type: "speaker" }],
+        validation: (Rule) => Rule.required(),
+      }),
   ],
   preview: {
     select: {
@@ -75,4 +83,4 @@ export default {
       };
     },
   },
-};
+});
