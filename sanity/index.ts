@@ -1,6 +1,5 @@
 import { ourHistory } from './schemas/components/about/ourHistory'
 import { staff } from './schemas/components/about/staff'
-// import about from './schemas/pages/aboutSchema'
 import { about } from './schemas/pages/aboutSchema'
 import { home } from './schemas/pages/homeSchema'
 import { staffList } from './schemas/components/about/staffList'

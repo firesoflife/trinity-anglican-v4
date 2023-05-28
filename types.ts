@@ -38,7 +38,7 @@ export type Sermon = {
   speaker: string;
 }
 
-export type Home = {
+export type HomePage = {
   home: string;
   pageTitle: string;
   slug: string;
@@ -46,5 +46,6 @@ export type Home = {
   heroSubheading: string;
   welcome: string;
   // NOTE & TODO  --> image types ? 
+  welcomeImage: string;
   alt: string;
 }
