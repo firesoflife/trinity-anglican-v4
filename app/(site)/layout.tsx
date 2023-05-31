@@ -29,7 +29,7 @@ export default async function RootLayout({
         <div className='flex flex-col min-h-screen'>
           {/* @ts-expect-error Async Server Component */}
           <NavBar />
-          <main className='py-20 flex-grow'>
+          <main>
             {children}
           </main>
           <Footer />
