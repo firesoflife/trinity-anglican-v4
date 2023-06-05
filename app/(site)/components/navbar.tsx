@@ -11,7 +11,7 @@ export default async function NavBar({ params }: Props) {
   const home = await getHome();
 
   return (
-    <header className="navbar bg-base-100">
+    <header className="navbar bg-base-100 -mb-10">
       <div className="flex-1">
         <Link href={'/home'} className="btn btn-ghost normal-case text-xl">{home.pageTitle}</Link>
       </div>

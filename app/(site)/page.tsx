@@ -29,8 +29,8 @@ const HomePage = async () => {
         <link rel="icon" href="/favicon.ico" />
       </Head >
 
-      <div className='bg-red-700'>
-        <div className="hero h-screen" style={{ backgroundImage: `url(${welcomeImageUrl})` }}>
+      <div className='bg-primary h-screen'>
+        <div className="hero h-[75vh]" style={{ backgroundImage: `url(${welcomeImageUrl})` }}>
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-center text-neutral-content">
             <div className="max-w-md">

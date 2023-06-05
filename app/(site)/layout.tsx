@@ -30,7 +30,7 @@ export default async function RootLayout({
           <div className='bg-primary pt-7'>
             {/* @ts-expect-error Async Server Component */}
             <NavBar />
-            <main>
+            <main className='h-screen'>
               {children}
             </main>
             <Footer />
