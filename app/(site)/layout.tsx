@@ -10,8 +10,8 @@ import Footer from './components/footer'
 
 
 export const metadata = {
-  title: 'Thinking in Circles - A Critical Blog',
-  description: 'Not to be confused with circular thinking, Thinking in Circles seeks the voice of reason on issues such as philosophy, technology, politics, policy, and more, through ancient wisdom and contemporary critical thinking. ',
+  title: 'Trinity Anglican Church',
+  description: 'Trinity Anglican Church, Nova Scotia, Canada. A welcoming community of faith in the Anglican tradition. We are a parish of the Anglican Diocese of Nova Scotia and Prince Edward Island, a member of the worldwide Anglican Communion, and a member of the World Council of Churches.',
 }
 
 export default async function RootLayout({
@@ -25,14 +25,16 @@ export default async function RootLayout({
 
   return (
     <html lang="en" data-theme="corporate" >
-      <body>
-        <div className='flex flex-col min-h-screen'>
-          {/* @ts-expect-error Async Server Component */}
-          <NavBar />
-          <main>
-            {children}
-          </main>
-          <Footer />
+      <body >
+        <div>
+          <div className='bg-primary pt-7'>
+            {/* @ts-expect-error Async Server Component */}
+            <NavBar />
+            <main>
+              {children}
+            </main>
+            <Footer />
+          </div>
         </div>
       </body>
     </html>

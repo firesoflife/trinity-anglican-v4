@@ -17,104 +17,29 @@ function urlFor(source: SanityImageSource) {
 
 const HomePage = async () => {
   const home = await getHome()
-  // return (
-  //   <div className="bg-slate-300">
 
-  //     <div className='container mx-auto px-4'>
-  //       <h1 className='text-4xl text-center'>Welcome to  {home.pageTitle} </h1>
-  //       <p>{home.welcome}</p>
-  //       <div className='h-fit'>
-  //         <Image
-  //           src={urlFor(home.welcomeImage).url() || ''}
-  //           alt={home.welcomeImage}
-  //           width={2000}
-  //           height={1080}
+  const welcomeImageUrl = home.welcomeImage ? urlFor(home.welcomeImage).url() : 'https://images.unsplash.com/photo-1584792977024-014310b55977?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3870&q=80';
 
-  //           className='rounded-lg'
-  //         />
-  //       </div>
-  //     </div>
-  //     <div className="font-sans min-h-screen antialiased bg-primary text-gray-900">
-  //       <Head>
-  //         <title>Anglican Church</title>
-  //         <link rel="icon" href="/favicon.ico" />
-  //       </Head>
 
-  //       <main>
-  //         <section className="relative block hero md:hero-md bg-cover" style={{ backgroundImage: 'url("https://unsplash.com/photos/3Ja1NLewIew")' }}>
-  //           <span id="blackOverlay" className="absolute overlay"></span>
-  //           <div className="bottom-svg pointer-events-none h-70">
-  //             <svg className="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-  //               <polygon className="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
-  //             </svg>
-  //           </div>
-  //         </section>
-
-  //         <section className="container mx-auto text-center py-6 mb-12">
-  //           <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-white">Welcome to our Church</h1>
-  //           <div className="w-full mb-4">
-  //             <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
-  //           </div>
-
-  //           <h2 className="my-4 text-3xl leading-tight">This is a welcome message.</h2>
-  //           <p className="mb-8 text-2xl leading-relaxed">Here, you will find all the information you need about our church and its activities.</p>
-  //         </section>
-  //       </main>
-  //     </div>s
-  //   </div>
-  // )
 
   return (
-    <div className="font-sans min-h-screen antialiased bg-secondary text-gray-900">
-      <Head>
-        <title>Anglican Church</title>
+    <div className="font-sans antialiased bg-primary text-gray-900">
+      <Head  >
+        <title>{home.pageTitle}</title>
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      </Head >
 
-      <main>
-        <section className="relative block hero md:hero-md bg-cover">
-          <div className="w-full h-full absolute inset-0 bg-black opacity-50"></div>
-          <div className="bottom-svg pointer-events-none h-70">
-            <svg className="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-              <polygon className="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
-            </svg>
-          </div>
-
-          <div className="container mx-auto text-center py-6 mb-12 relative"> {/* Ensure text is above the overlay */}
-            <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-white">Welcome to Trinity Anglican Church</h1>
-            <div className="w-full mb-4">
-              <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
-            </div>
-
-            <h2 className="my-4 text-3xl leading-tight text-white">This is a welcome message.</h2>
-            <p className="mb-8 text-2xl leading-relaxed text-white">Welcome to our Anglican Church. We are delighted to have you here. Our church is a place of worship, fellowship, and community. We believe in the power of prayer, the joy of love, and the miracle of forgiveness. We hope you feel welcome, and we look forward to getting to know you better. Please feel free to reach out with any questions or needs you may have.</p>
-          </div>
-        </section>
-        <section className="bg-dark-green text-ivory py-12">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl mb-4">Resources</h2>
-            <div className="flex justify-center space-x-4 md:space-x-8">
-              <a href="#" className="bg-soft-grey hover:bg-light-grey text-navy-blue font-bold py-2 px-4 rounded">
-                Prayer Book Society of Canada
-              </a>
-              <a href="#" className="bg-soft-grey hover:bg-light-grey text-navy-blue font-bold py-2 px-4 rounded">
-                Anglican Diocese of NS & PEI
-              </a>
-              <a href="#" className="bg-soft-grey hover:bg-light-grey text-navy-blue font-bold py-2 px-4 rounded">
-                In need of pastoral care? Contact the Priest
-              </a>
+      <div className='bg-red-700'>
+        <div className="hero h-screen" style={{ backgroundImage: `url(${welcomeImageUrl})` }}>
+          <div className="hero-overlay bg-opacity-60"></div>
+          <div className="hero-content text-center text-neutral-content">
+            <div className="max-w-md">
+              <h1 className="mb-5 text-5xl font-bold">{home.pageTitle}</h1>
+              <p className="mb-5">{home.welcome}</p>
             </div>
           </div>
-        </section>
-        <section className="bg-beige py-12">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl mb-4">Church Bulletin</h2>
-            <p className="mx-auto text-lg leading-relaxed">
-              Welcome to our weekly bulletin. Here, you'll find updates, announcements, and other important information. This section will be updated weekly, so make sure to check back often. For now, this is placeholder content, but in the future, this content will be dynamic and fetched from a backend.
-            </p>
-          </div>
-        </section>
-      </main>
+        </div>
+      </div>
     </div>
   )
 }

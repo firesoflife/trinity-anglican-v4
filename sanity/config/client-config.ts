@@ -1,10 +1,8 @@
 const myClientConfig = {
-  projectId: 'ismdiz3z',
-  dataset: 'production',
-  // projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  // dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET as string,
   apiVersion: '2023-05-14',
-  useCDN: true,
+  useCDN: false,
 }
 
 export default myClientConfig
