@@ -18,6 +18,7 @@ export async function getHome(): Promise<HomePage> {
       heroHeading,
       heroSubheading, 
       welcome,
+      welcomeHeading,
       "welcomeImage": welcomeImage.asset->url,
       "welcomeImageAlt": welcomeImage.alt,
     }

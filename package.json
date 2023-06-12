@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/font": "^13.4.5",
     "@sanity/types": "^3.11.1",
     "@sanity/vision": "^3.10.3",
     "@types/node": "20.1.4",

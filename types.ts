@@ -45,6 +45,7 @@ export type HomePage = {
   heroHeading: string;
   heroSubheading: string;
   welcome: string;
+  welcomeHeading: string;
   // NOTE & TODO  --> image types ? 
   welcomeImage: string;
   alt: string;

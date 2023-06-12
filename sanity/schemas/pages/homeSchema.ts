@@ -1,4 +1,4 @@
-import { defineType, defineField } from '@sanity/types'
+import { defineType, defineField, StringRule } from '@sanity/types'
 
 export const home = defineType({
   name: 'home',
@@ -10,6 +10,8 @@ export const home = defineType({
         name: 'pageTitle',
         title: 'Page Title',
         type: 'string',
+        placeholder: 'Trinity Anglican Church',
+        validation: (Rule: StringRule) => Rule.required().max(27).warning('You have exceeded the maximum length')
       }),
     defineField(
       {
@@ -23,30 +25,21 @@ export const home = defineType({
       }),
     defineField(
       {
-        name: 'heroImage',
-        title: 'Hero Image',
-        type: 'image',
-      }),
-    defineField(
-      {
-        name: 'heroHeading',
-        title: 'Hero Heading',
+        name: 'welcomeHeading',
+        title: 'Welcome Heading',
         type: 'string',
-      }),
-    defineField(
-      {
-        name: 'heroSubheading',
-        title: 'Hero Subheading',
-        type: 'string',
-      }),
+        placeholder: 'Welcome to Trinity Anglican Church',
+        validation: (Rule: StringRule) => Rule.max(80).warning('You have exceeded the maximum length')
+      }
+    ),
     defineField(
       {
         name: 'welcome',
         title: 'Welcome Message',
         type: 'text',
-        initialValue:
+        placeholder:
           'ubi proles etiam contra votum nascitur, quamvis iam nata cogat se diligi. Recolo etiam, cum mihi theatrici carminis',
-        validation: Rule => Rule.max(500).warning('You have exceeded the maximum length')
+        validation: (Rule: StringRule) => Rule.max(500).warning('You have exceeded the maximum length')
       }),
     defineField(
       {

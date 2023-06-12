@@ -5,6 +5,8 @@ import { visionTool } from '@sanity/vision';
 import { deskStructure } from './sanity/config/deskStructure';
 
 const sanityConfig = defineConfig({
+  projectId: 'ismdiz3z',
+  dataset: 'production',
   title: 'Trinity Anglican Church, Halifax, NS',
   apiVersion: '2023-05-14',
   basePath: '/admin',

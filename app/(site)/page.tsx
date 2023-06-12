@@ -4,9 +4,9 @@ import myClientConfig from '@/sanity/config/client-config'
 import { getHome } from '@/sanity/utils/homeAPI/getHome'
 import ImageUrlBuilder from '@sanity/image-url'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
-import Image from 'next/image'
 import Head from 'next/head'
 import '../globals.css'
+
 
 
 const builder = ImageUrlBuilder(myClientConfig)
@@ -30,15 +30,21 @@ const HomePage = async () => {
       </Head >
 
       <div className='bg-primary h-screen'>
-        <div className="hero h-[75vh]" style={{ backgroundImage: `url(${welcomeImageUrl})` }}>
+        <section className="hero h-[75vh]" style={{ backgroundImage: `url(${welcomeImageUrl})` }}>
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-center text-neutral-content">
             <div className="max-w-md">
-              <h1 className="mb-5 text-5xl font-bold">{home.pageTitle}</h1>
-              <p className="mb-5">{home.welcome}</p>
+              <h1 className="mb-96 text-5xl font-bold">{home.pageTitle}</h1>
+
             </div>
           </div>
-        </div>
+        </section>
+        <section className='p-8'>
+          <h2 className='text-white text-center text-2xl p-4'>{home.welcomeHeading}</h2>
+          <div className='max-w-4xl m-auto'>
+            <p className='leading-8 text-white text-base'>{home.welcome} </p>
+          </div>
+        </section>
       </div>
     </div>
   )

@@ -3,10 +3,17 @@ import '../globals.css'
 import { getHome } from '@/sanity/utils/homeAPI/getHome'
 import NavBar from './components/navbar'
 import Footer from './components/footer'
+import MobileNavbar from './components/mobileNavbar'
 
 /////////////////////////////////////////
 /////////// FONT DEFINITIONS ///////////
 ///////////////////////////////////////
+// import { Cormorant_Garamond } from '@next/font/google'
+
+// const garamond = Cormorant_Garamond({
+//   subsets: ['latin'],
+//   weight: ["400", "600", "700"],
+// })
 
 
 export const metadata = {
@@ -28,8 +35,14 @@ export default async function RootLayout({
       <body >
         <div>
           <div className='bg-primary pt-7'>
-            {/* @ts-expect-error Async Server Component */}
-            <NavBar />
+            <div className='hidden lg:block'>
+              {/* @ts-expect-error Async Server Component */}
+              <NavBar />
+            </div>
+            <div className='block lg:hidden'>
+              {/* @ts-expect-error Async Server Component */}
+              <MobileNavbar />
+            </div>
             <main className='h-screen'>
               {children}
             </main>
