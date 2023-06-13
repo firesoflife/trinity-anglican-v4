@@ -25,7 +25,16 @@ export default async function RootLayout({
   return (
     <html lang="en" data-theme="corporate" >
       <body >
-        <div>
+        <div className={`
+            //  Fonts // 
+              ${header.variable} 
+              ${header2.variable} 
+              ${mainContent.variable}
+              ${mainContent2.variable}
+              ${subContent.variable}
+              ${subContent2.variable}
+
+              `}>
           <div className='bg-primary pt-7'>
             <div className='hidden lg:block'>
               {/* @ts-expect-error Async Server Component */}
@@ -36,14 +45,6 @@ export default async function RootLayout({
               <MobileNavbar />
             </div>
             <main className={`
-            //  Fonts // 
-              ${header.variable} 
-              ${header2.variable} 
-              ${mainContent.variable}
-              ${mainContent2.variable}
-              ${subContent.variable}
-              ${subContent2.variable}
-            // Other classes //  
               h-screen
               `}>
               {children}

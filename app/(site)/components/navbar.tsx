@@ -1,8 +1,6 @@
 
 import { getHome } from '@/sanity/utils/homeAPI/getHome';
 import Link from 'next/link';
-import { header, header2, mainContent, mainContent2, subContent, subContent2 } from '../../(site)/utilities/fonts'
-
 
 type Props = {
   params: {
@@ -20,7 +18,7 @@ export default async function NavBar({ params }: Props) {
         <Link href={'/'} className="btn btn-ghost normal-case text-xl ">{home.pageTitle}</Link>
       </div>
       <div className="flex-none">
-        <ul className={`menu menu-horizontal px-1 text-accent`}>
+        <ul className={`menu menu-horizontal px-1 text-accent font-mainContent2`}>
           <li tabIndex={0}>
             <Link href={'/about'}>
               About Us
