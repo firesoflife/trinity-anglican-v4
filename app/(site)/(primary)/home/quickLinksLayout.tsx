@@ -3,11 +3,14 @@ import QuickLinkCard from '../../components/homeComponents/quickLinkCard';
 const cards = [
   {
     imageSrc: 'https://source.unsplash.com/random',
-    header: 'Card Header 1',
+    header: 'Prayer Book of Society of Canada',
     subheader: 'Card Subheader 1',
     content:
       'This is the main content of the card 1. You can write a description or any information you want to display here.',
-    cta: 'Click me',
+    cta: {
+      text: 'Click me',
+      link: 'https://www.anglicanprayerbook.ca/',
+    },
   },
   {
     imageSrc: 'https://source.unsplash.com/random',
@@ -15,7 +18,18 @@ const cards = [
     subheader: 'Card Subheader 2',
     content:
       'This is the main content of the card 2. You can write a description or any information you want to display here.',
-    cta: 'Click me',
+    cta: {
+      text: 'Click me',
+      link: 'https://www.anglicanprayerbook.ca/',
+    },
+  },
+  {
+    imageSrc: 'https://source.unsplash.com/random',
+    header: 'Card Header 3',
+    subheader: 'Card Subheader 3',
+    content:
+      'This is the main content of the card 2. You can write a description or any information you want to display here.',
+    cta: null,
   },
   // Add more cards as needed
 ];
