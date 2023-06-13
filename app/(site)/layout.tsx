@@ -4,16 +4,8 @@ import { getHome } from '@/sanity/utils/homeAPI/getHome'
 import NavBar from './components/navbar'
 import Footer from './components/footer'
 import MobileNavbar from './components/mobileNavbar'
+import { header, header2, mainContent, mainContent2, subContent, subContent2 } from '../(site)/utilities/fonts'
 
-/////////////////////////////////////////
-/////////// FONT DEFINITIONS ///////////
-///////////////////////////////////////
-// import { Cormorant_Garamond } from '@next/font/google'
-
-// const garamond = Cormorant_Garamond({
-//   subsets: ['latin'],
-//   weight: ["400", "600", "700"],
-// })
 
 
 export const metadata = {
@@ -37,19 +29,29 @@ export default async function RootLayout({
           <div className='bg-primary pt-7'>
             <div className='hidden lg:block'>
               {/* @ts-expect-error Async Server Component */}
-              <NavBar />
+              <NavBar props={mainContent} />
             </div>
             <div className='block lg:hidden'>
               {/* @ts-expect-error Async Server Component */}
               <MobileNavbar />
             </div>
-            <main className='h-screen'>
+            <main className={`
+            //  Fonts // 
+              ${header.variable} 
+              ${header2.variable} 
+              ${mainContent.variable}
+              ${mainContent2.variable}
+              ${subContent.variable}
+              ${subContent2.variable}
+            // Other classes //  
+              h-screen
+              `}>
               {children}
             </main>
             <Footer />
           </div>
         </div>
       </body>
-    </html>
+    </html >
   )
 } 

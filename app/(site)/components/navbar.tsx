@@ -1,21 +1,26 @@
 
 import { getHome } from '@/sanity/utils/homeAPI/getHome';
 import Link from 'next/link';
+import { header, header2, mainContent, mainContent2, subContent, subContent2 } from '../../(site)/utilities/fonts'
+
 
 type Props = {
-  params: { pageTitle: string, }
+  params: {
+    pageTitle: string,
+  }
 }
 
 export default async function NavBar({ params }: Props) {
+
   const home = await getHome();
 
   return (
-    <header className="navbar bg-base-100">
+    <header className="navbar bg-secondary px-16">
       <div className="flex-1">
-        <Link href={'/'} className="btn btn-ghost normal-case text-xl">{home.pageTitle}</Link>
+        <Link href={'/'} className="btn btn-ghost normal-case text-xl ">{home.pageTitle}</Link>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1">
+        <ul className={`menu menu-horizontal px-1 text-accent`}>
           <li tabIndex={0}>
             <Link href={'/about'}>
               About Us
