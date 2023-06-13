@@ -15,7 +15,7 @@ module.exports = {
         redHover: '#982F2F',
         primaryAccent1: '#CA5A33',
         PrimaryAccent2: '#D5845C',
-        secondary: '#F2E9E4',
+        secondary: '#DFD8BE',
         accent: '#3B5771',
         accentHover: '#577FA9',
       },

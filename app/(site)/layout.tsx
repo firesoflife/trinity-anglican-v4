@@ -4,7 +4,7 @@ import { getHome } from '@/sanity/utils/homeAPI/getHome'
 import NavBar from './components/navbar'
 import Footer from './components/footer'
 import MobileNavbar from './components/mobileNavbar'
-import { header, header2, mainContent, mainContent2, subContent, subContent2 } from '../(site)/utilities/fonts'
+import { heading, heading2, mainContent, mainContent2, subContent, subContent2 } from '../(site)/utilities/fonts'
 
 
 
@@ -27,15 +27,14 @@ export default async function RootLayout({
       <body >
         <div className={`
             //  Fonts // 
-              ${header.variable} 
-              ${header2.variable} 
+              ${heading.variable} 
+              ${heading2.variable} 
               ${mainContent.variable}
               ${mainContent2.variable}
               ${subContent.variable}
               ${subContent2.variable}
-
               `}>
-          <div className='bg-primary pt-7'>
+          <div className='bg-primary pt-7 h-[100%]'>
             <div className='hidden lg:block'>
               {/* @ts-expect-error Async Server Component */}
               <NavBar props={mainContent} />
@@ -44,9 +43,7 @@ export default async function RootLayout({
               {/* @ts-expect-error Async Server Component */}
               <MobileNavbar />
             </div>
-            <main className={`
-              h-screen
-              `}>
+            <main className='h-full'>
               {children}
             </main>
             <Footer />

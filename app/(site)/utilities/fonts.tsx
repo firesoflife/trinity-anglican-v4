@@ -4,13 +4,13 @@ import { Cormorant_Garamond, Lato, Merriweather } from '@next/font/google'
 /////////// FONT DEFINITIONS ///////////
 ///////////////////////////////////////
 
-export const header = Cormorant_Garamond({
+export const heading = Cormorant_Garamond({
   subsets: ['latin-ext'],
   weight: ["400"],
   variable: '--font-header'
 })
 
-export const header2 = Cormorant_Garamond({
+export const heading2 = Cormorant_Garamond({
   subsets: ['latin-ext'],
   weight: ["700"],
   variable: '--font-header2'
