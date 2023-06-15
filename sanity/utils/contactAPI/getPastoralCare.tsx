@@ -5,14 +5,16 @@ import myClientConfig from '@/sanity/config/client-config';
 export async function getPastoralCare(): Promise<PastoralCare> {
 
   return createClient(myClientConfig).fetch(groq`
-    *[_type == "pastoralCare"][0]{}
-      _id,
-      _createdAt,
-      title,
-      description,
-      "image": image.asset->url,
-      "imageAlt": image.alt,
-      buttonText,
-    `);
+    *[_type == "pastoralCare"][0]{
+        _id,
+        _createdAt,
+        title,
+        description,
+        "imageUrl": image.asset->url,
+        imageAlt,
+        buttonText
+      }
+    `
+  )
 }
 

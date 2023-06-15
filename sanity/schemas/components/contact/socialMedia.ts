@@ -41,7 +41,6 @@ export const socialMediaPlatform = defineType({
               },
             }),
         ],
-        validation: (Rule) => Rule.required(),
       }),
   ],
 });

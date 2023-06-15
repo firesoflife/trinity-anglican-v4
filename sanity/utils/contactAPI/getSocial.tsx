@@ -11,8 +11,8 @@ export async function getSocial(): Promise<SocialComponent> {
       _createdAt,
       platformName,
       platformUrl,
-      "platformIcon": platformIcon.asset->url,
-      "platformIconAlt": platformIcon.alt,
+      "platformIconUrl": platformIcon.asset->url,
+      platformIconAlt
     }
     `
   )
