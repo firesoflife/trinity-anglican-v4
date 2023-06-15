@@ -7,8 +7,8 @@ export const contactUs = defineType({
 
   fields: [
     defineField({
-      name: 'title',
-      title: 'Title',
+      name: 'pageTitle',
+      title: 'Page Title',
       type: 'string',
     }),
     defineField({

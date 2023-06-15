@@ -39,13 +39,13 @@ const HomePage = async () => {
             </div>
           </div>
         </section>
-        <section className='p-8'>
-          <h2 className='text-white text-center text-4xl p-4 font-subheading'>{home.welcomeHeading}</h2>
+        <section className='px-8 py-16'>
+          <h2 className='text-secondary text-center text-4xl pb-4 font-subheading'>{home.welcomeHeading}</h2>
           <div className='max-w-4xl m-auto'>
             <p className='leading-8 text-xl text-secondary text-center font-subContent'>{home.welcome} </p>
           </div>
         </section>
-        <section>
+        <section >
           <QuickLinksLayout />
         </section>
       </div>

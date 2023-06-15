@@ -9,22 +9,22 @@ export const socialMediaPlatform = defineType({
   fields: [
     defineField(
       {
-        name: 'name',
+        name: 'platformName',
         title: 'Platform Name',
         type: 'string',
         validation: (Rule) => Rule.required(),
       }),
     defineField(
       {
-        name: 'url',
+        name: 'platformUrl',
         title: 'Platform URL',
         type: 'url',
         validation: (Rule) => Rule.required(),
       }),
     defineField(
       {
-        name: 'logo',
-        title: 'Platform Logo',
+        name: 'platformIcon',
+        title: 'Platform Icon',
         type: 'image',
         options: {
           hotspot: true,
@@ -33,7 +33,7 @@ export const socialMediaPlatform = defineType({
         fields: [
           defineField(
             {
-              name: 'alt',
+              name: 'platformIconAlt',
               type: 'string',
               title: 'Alternative Text',
               options: {
@@ -42,13 +42,6 @@ export const socialMediaPlatform = defineType({
             }),
         ],
         validation: (Rule) => Rule.required(),
-      }),
-    defineField(
-      {
-        name: 'description',
-        title: 'Platform Description',
-        type: 'array',
-        of: [{ type: 'block' }],
       }),
   ],
 });

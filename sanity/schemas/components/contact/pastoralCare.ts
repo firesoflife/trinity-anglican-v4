@@ -14,12 +14,17 @@ export const pastoralCare = defineType({
     defineField({
       name: 'description',
       title: 'Description',
-      type: 'string',
+      type: 'text',
     }),
     defineField({
       name: 'image',
       title: 'Image',
       type: 'image',
+    }),
+    defineField({
+      name: 'imageAlt',
+      title: 'Image Alt',
+      type: 'string',
     }),
     defineField({
       name: 'buttonText',
